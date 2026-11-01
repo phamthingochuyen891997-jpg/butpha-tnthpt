@@ -106,7 +106,17 @@ nav.tabs{margin-top:8px}nav.tabs button{padding:8px 10px;font-size:12px}main{pad
 .ordp select:disabled{opacity:.6;cursor:not-allowed}
 .ordbar{display:none;position:relative;z-index:2;background:#FFEEF4;color:#8E1446;text-align:center;font-size:13.5px;padding:7px 12px;border-bottom:1px solid #F1CEDB}
 body.sorder .ordbar{display:block}
-</style></head><body><div style="background:#C41F63;color:#fff;text-align:center;padding:8px 12px;font:600 14px/1.4 'Be Vietnam Pro',system-ui,sans-serif">🎁 Đây là đề làm thử MIỄN PHÍ. Khóa Bứt Phá có thêm 14 đề B2+/C1, sổ lỗi sai, luyện dạng, thẻ từ vựng… <a href="gioi-thieu.html" style="color:#fff;text-decoration:underline">Xem khóa học →</a></div>
+
+#mbar{display:none;position:fixed;left:0;right:0;top:0;z-index:40;background:linear-gradient(135deg,#6E0F37,#C41F63);color:#fff;font:600 13px 'Be Vietnam Pro',system-ui,sans-serif;padding:7px 12px;align-items:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,.2);transform:translateY(-110%);transition:transform .2s}
+#mbar.on{transform:none}#mbar b{font-size:15px}#mbar .sp{flex:1}
+#mbar button{font:700 12.5px 'Be Vietnam Pro',system-ui,sans-serif;border:1px solid rgba(255,255,255,.7);background:transparent;color:#fff;border-radius:999px;padding:5px 11px}
+#mbar button.pri{background:#fff;color:#8E1446;border-color:#fff}
+@media(max-width:900px){#mbar{display:flex}}
+.exp .more{display:none;margin:4px 0 8px;font:600 13px 'Be Vietnam Pro',system-ui,sans-serif;border:1px dashed var(--line);background:transparent;color:inherit;border-radius:999px;padding:5px 12px;cursor:pointer}
+.exp.short .more{display:inline-block}
+.exp.short .row:not(.memo){display:none}
+@media(max-width:600px){.qh{flex-direction:column;gap:6px}#jump{bottom:30px!important}}
+</style></head><body><div style="background:#C41F63;color:#fff;text-align:center;padding:8px 12px;font:600 14px/1.4 'Be Vietnam Pro',system-ui,sans-serif">🎁 Đây là đề làm thử MIỄN PHÍ. Khóa Bứt Phá có thêm 16 đề B2+/C1, sổ lỗi sai, luyện dạng, thẻ từ vựng… <a href="gioi-thieu.html" style="color:#fff;text-decoration:underline">Xem khóa học →</a></div>
 <div class="wm">© Ms. Ngọc Huyền</div>
 <header><div class="hrow"><div><div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">← Lộ trình</a> · Bứt Phá Tiếng Anh TN THPT · Ms. Ngọc Huyền</div><h1>ĐỀ THI THỬ TỐT NGHIỆP THPT – SỐ 01</h1><div class="sub">Môn: Tiếng Anh · Thời gian: 50 phút · 40 câu · Mức độ: B1+ · Cấu trúc 2026 · Mã đề 601</div></div>
 <div class="stats"><label class="pill ordp" title="Thứ tự các phần trong đề">🔀 <select id="ordSel" aria-label="Thứ tự các phần"><option value="khoa">Thứ tự của khóa</option><option value="bo">Kiểu Sở: đa số Sở / đề minh họa</option><option value="halong">Kiểu Sở: Chuyên Hạ Long</option><option value="ngaunhien">Kiểu Sở: xáo ngẫu nhiên</option></select></label><span class="pill">⏱ <b id="s_time">50:00</b></span><span class="pill">Đã làm <b id="s_done">0</b>/40</span><span class="pill">Đúng <b id="s_right">0</b></span><span class="pill">Điểm <b id="s_score">0,00</b></span>
@@ -272,6 +282,33 @@ if(st.mode==='exam'){const s=document.getElementById('ordSel');if(s){s.disabled=
 if(st.mode==='exam'){Object.entries(st.pick).forEach(([n,l])=>$$(`.opt[data-q="${n}"]`).forEach(b=>b.classList.toggle('sel',b.dataset.l===l)));$('#subbtn').style.display='';$('#reveal').style.display='none';const m=Math.floor(st.left/60),s2=st.left%60;$('#s_time').textContent=`${String(m).padStart(2,'0')}:${String(s2).padStart(2,'0')}`;
   if(ls('autostart')){ls('autostart','');timer()}else{$('#tbtn').textContent='▶ Tiếp tục thi'}}
 show(ls('tab')||D[0].id);stats();
+
+/* ===== Bổ sung: thanh dính khi cuộn trên điện thoại · thu gọn lời giải câu làm đúng ===== */
+(function(){
+  const bar=document.createElement('div'); bar.id='mbar';
+  bar.innerHTML='<span>⏱ <b id="mb_t"></b></span><span>Đã làm <b id="mb_d"></b>/40</span><span class="sp"></span><button type="button" id="mb_tab">Các phần ▾</button><button type="button" class="pri" id="mb_sub" style="display:none">Nộp bài</button>';
+  document.body.appendChild(bar);
+  const hd=document.querySelector('header');
+  const sync=()=>{ const t=document.getElementById('s_time'), d=document.getElementById('s_done'); document.getElementById('mb_t').textContent=t?t.textContent:''; document.getElementById('mb_d').textContent=d?d.textContent:'';
+    document.getElementById('mb_sub').style.display=(st.mode==='exam'&&!st.sub)?'':'none'; };
+  setInterval(sync,500); sync();
+  const onScroll=()=>{ const r=hd.getBoundingClientRect(); bar.classList.toggle('on', r.bottom<0); };
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.getElementById('mb_sub').onclick=()=>submitExam();
+  document.getElementById('mb_tab').onclick=()=>{ window.scrollTo({top:0,behavior:'smooth'}); };
+})();
+(function(){
+  const _a=answer;
+  answer=function(n,l,save){ const before=st.ans[n]; _a(n,l,save);
+    if(st.mode==='exam'&&!st.sub) return; if(before) return;
+    const e=document.getElementById('e'+n); if(!e) return;
+    if(l===KEY[n]){ e.classList.add('short');
+      if(!e.querySelector('.more')){ const b=document.createElement('button'); b.type='button'; b.className='more'; b.textContent='Xem dịch & phân tích ▾'; b.onclick=()=>e.classList.remove('short'); const v=e.querySelector('.verdict'); v.after(b); } }
+  };
+  /* áp dụng cho các câu đã làm từ trước (khôi phục khi tải lại trang) */
+  Object.entries(st.ans).forEach(([n,l])=>{ if(l===KEY[n]){ const e=document.getElementById('e'+n); if(e&&!e.querySelector('.more')){ e.classList.add('short'); const b=document.createElement('button'); b.type='button'; b.className='more'; b.textContent='Xem dịch & phân tích ▾'; b.onclick=()=>e.classList.remove('short'); e.querySelector('.verdict').after(b); } } });
+})();
+
 (function(){const j=document.createElement('button');j.id='jump';j.type='button';document.body.appendChild(j);
  function cur(){return document.querySelector('.part.on')}
  function upd(){const p=cur();const L=p&&p.querySelector('.left');if(!L){j.style.visibility='hidden';return}j.style.visibility='';const r=L.getBoundingClientRect();j.textContent=(r.bottom>innerHeight*0.6)?'↓ Câu hỏi':'↑ Bài đọc'}

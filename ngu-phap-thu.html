@@ -1,0 +1,268 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Học thử miễn phí · Ngữ pháp đề Sở · Bứt Phá TN THPT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<style>
+:root{--bg:#FFF7FA;--card:#FFFFFF;--soft:#FFEEF4;--tint:#FFD9E7;--ink:#36141F;--muted:#85596B;--line:#F1CEDB;--accent:#C41F63;--accent-2:#E8558E;--deep:#8E1446;--on-accent:#fff;--ok:#1F8A5B;--ok-soft:#DDF2E8;--bad:#B4232C;--bad-soft:#FDE4E6;--warn:#B86B00;--warn-soft:#FFF0D9;
+--display:"Playfair Display",Georgia,serif;--body:"DM Sans","Segoe UI",system-ui,sans-serif;--shadow:0 1px 2px rgba(120,20,60,.06),0 8px 24px rgba(120,20,60,.07)}
+@media (prefers-color-scheme:dark){:root{--bg:#1A0F14;--card:#24151C;--soft:#2E1A24;--tint:#4A2234;--ink:#F8E8EF;--muted:#C7A1B2;--line:#45283A;--accent:#FF77A9;--accent-2:#FF9CC1;--deep:#FFB3CF;--on-accent:#1A0F14;--ok:#5ED39C;--ok-soft:#173327;--bad:#FF8A8A;--bad-soft:#3A1A1E;--warn:#F2B04C;--warn-soft:#3A2A12;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-padding-top:128px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);-webkit-tap-highlight-color:transparent}
+a{color:var(--accent)}button{font:inherit;color:inherit;cursor:pointer}
+.topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .in{max-width:980px;margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:10px}
+.mark{width:34px;height:34px;flex:none;border-radius:10px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:700 14px var(--display)}
+.brand{flex:1;min-width:0}.brand b{display:block;font-family:var(--display);font-size:1.04rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand small{display:block;color:var(--muted);font-size:.76rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px;font-weight:600;font-size:.86rem;text-decoration:none;color:var(--ink);white-space:nowrap}
+@media (max-width:560px){.tb.hide-s{display:none}}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 70px}
+.hero{background:linear-gradient(135deg,var(--deep),var(--accent));color:#fff;border-radius:22px;padding:24px 24px 20px;box-shadow:var(--shadow)}
+@media (prefers-color-scheme:dark){.hero{background:linear-gradient(135deg,#5A0D2C,#A3184F)}}
+.hero .ey{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:700}
+.hero h1{font-family:var(--display);font-size:clamp(1.55rem,4.2vw,2.3rem);line-height:1.15;margin:.25em 0 .35em}
+.hero p{margin:0;max-width:680px;opacity:.95;font-size:.96rem}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none;font-size:.86rem}
+.flow li{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 11px}
+.overall{margin-top:16px;display:flex;align-items:center;gap:12px;font-size:.88rem}
+.overall .bar{flex:1;height:8px;background:rgba(255,255,255,.25);border-radius:9px;overflow:hidden}.overall .bar i{display:block;height:100%;background:#fff;border-radius:9px;transition:width .4s}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+@media (max-width:720px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{position:relative;text-align:left;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.28);border-radius:16px;padding:11px 12px;color:#fff;min-height:84px;display:flex;flex-direction:column;gap:2px;transition:background .15s,transform .15s}
+.tile:hover{background:rgba(255,255,255,.2)}.tile.on{background:#fff;color:var(--deep);border-color:#fff}
+@media (prefers-color-scheme:dark){.tile.on{background:#FFE4EF;color:#5A0D2C}}
+.tile .n{font:700 .78rem var(--body);opacity:.8}.tile b{font-size:.98rem;line-height:1.25}
+.tile .stt{margin-top:auto;font-size:.76rem;font-weight:600;opacity:.92}
+.tile .ck{position:absolute;right:10px;top:9px;font-size:.95rem}
+.sec{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:clip}
+.lh{padding:18px 20px 10px;display:flex;gap:12px;align-items:flex-start}
+.lh .num{flex:none;width:44px;height:44px;border-radius:14px;background:var(--soft);color:var(--accent);display:grid;place-items:center;font:700 1.15rem var(--display)}
+.lh h2{margin:0;font-family:var(--display);font-size:1.38rem;line-height:1.2}.lh .sub{color:var(--muted);font-size:.86rem;margin-top:2px}
+.steps{position:sticky;top:var(--tbh,53px);z-index:20;display:flex;gap:6px;padding:8px 14px;background:var(--card);border-bottom:1px solid var(--line);border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.steps::-webkit-scrollbar{display:none}
+.step{flex:1 0 auto;display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 12px;font-size:.86rem;font-weight:600;white-space:nowrap}
+.step .c{width:22px;height:22px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:.76rem;font-weight:700}
+.step.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}.step.on .c{background:rgba(255,255,255,.25);color:var(--on-accent)}
+.step.ok .c{background:var(--ok);color:#fff}
+.step .badge{background:var(--bad);color:#fff;border-radius:999px;font-size:.72rem;padding:0 7px;line-height:1.5}
+.pane{padding:16px 20px 22px}
+@media (max-width:600px){.pane{padding:14px 13px 20px}.lh{padding:16px 14px 8px}.hero{padding:20px 16px 16px}}
+.intro{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:14px;padding:11px 13px;font-size:.92rem;margin-bottom:14px}
+.intro .i{font-size:1.2rem;line-height:1.3}
+.prog{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);margin:0 0 12px}
+.prog .bar{flex:1;height:6px;background:var(--soft);border-radius:9px;overflow:hidden}.prog .bar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.q{border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px;margin:0 0 12px;background:var(--card);transition:border-color .2s,box-shadow .2s}
+.q.cur{border-color:var(--accent-2);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}
+.q .qn{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.q .st{font-size:1.04rem;margin:4px 0 10px;line-height:1.55}
+.blank{display:inline-block;min-width:74px;border-bottom:2px solid var(--accent);margin:0 3px;text-align:center;color:var(--accent);font-weight:700;padding:0 4px;line-height:1.2}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:10px 12px;min-height:48px;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--accent-2)}
+.opt .l{flex:none;width:26px;height:26px;border-radius:8px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:.84rem;color:var(--muted)}
+.q.done .opt{cursor:default}.q.done .opt:hover{border-color:var(--line)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}.opt.right .l{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}.opt.wrong .l{background:var(--bad);border-color:var(--bad);color:#fff}
+.q.done .opt:not(.right):not(.wrong){opacity:.55}
+.ex{display:none;margin-top:10px;border-radius:12px;padding:10px 12px;font-size:.93rem;background:var(--soft)}
+.q.done .ex{display:block}
+.ex .vd{font-weight:700;margin-bottom:2px}.ex .vd.y{color:var(--ok)}.ex .vd.n{color:var(--bad)}
+.ex .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:8px}
+.rchip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:600;color:var(--deep)}
+@media (prefers-color-scheme:dark){.rchip{color:var(--accent-2)}}
+.next{border:0;background:var(--accent);color:var(--on-accent);border-radius:999px;padding:7px 14px;font-weight:700;font-size:.86rem}
+.res{border-radius:16px;padding:16px;margin-top:6px;background:linear-gradient(135deg,var(--soft),var(--card));border:1.5px solid var(--accent-2)}
+.res .big{font:700 1.7rem var(--display);color:var(--accent)}
+.res p{margin:.3em 0 .6em}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.9rem;text-decoration:none;color:var(--ink)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.rule{border:1px solid var(--line);border-radius:14px;margin:0 0 10px;background:var(--bg);overflow:hidden}
+.rule summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;align-items:center;gap:10px;font-weight:700}
+.rule summary::-webkit-details-marker{display:none}
+.rule summary .k{flex:none;width:26px;height:26px;border-radius:8px;background:var(--tint);color:var(--deep);display:grid;place-items:center;font-size:.8rem}
+@media (prefers-color-scheme:dark){.rule summary .k{color:var(--ink)}}
+.rule summary .ar{margin-left:auto;color:var(--muted);transition:transform .2s}.rule[open] summary .ar{transform:rotate(90deg)}
+.rule .bd{padding:0 14px 13px 50px;font-size:.95rem}
+@media (max-width:600px){.rule .bd{padding:0 13px 13px}}
+.rule.miss{border-color:var(--bad);background:var(--bad-soft)}
+.rule .flag{font-size:.72rem;font-weight:700;color:#fff;background:var(--bad);border-radius:999px;padding:1px 8px}
+.box{border-radius:14px;padding:11px 13px;margin:12px 0;border-left:4px solid;font-size:.94rem}
+.box b.t{display:block;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.box.spot{background:var(--warn-soft);border-color:var(--warn)}.box.spot b.t{color:var(--warn)}
+.box.trap{background:var(--bad-soft);border-color:var(--bad)}.box.trap b.t{color:var(--bad)}
+.empty{text-align:center;color:var(--muted);padding:24px 10px}
+.empty b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:4px}
+.foot{text-align:center;color:var(--muted);font-size:.8rem;margin-top:26px}
+.kbd{display:none}@media (hover:hover) and (pointer:fine){.kbd{display:inline}}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:.88rem;font-weight:600;transition:all .25s;z-index:50;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+</style></head><body>
+<header class="topbar"><div class="in">
+  <a class="tb" href="gioi-thieu.html">← Giới thiệu khóa</a>
+  <div class="mark" aria-hidden="true">G</div>
+  <div class="brand"><b>Ngữ pháp đề Sở</b><small>6 điểm ngữ pháp hay hỏi trong đề thi thử 2026</small></div>
+  <a class="tb" href="gioi-thieu.html#hoc-phi" style="background:var(--accent);border-color:var(--accent);color:var(--on-accent)">Đăng ký</a>
+</div></header>
+<div class="wrap">
+  <div class="hero">
+    <div class="ey">Học thử miễn phí · Bài 1/6</div>
+    <h1>Làm thử trước – sai đâu học đó</h1>
+    <p>Mỗi bài có 20 câu tự biên soạn, đúng dạng đề thi thử của các Sở năm 2026. Em làm 5 câu kiểm tra trước: đúng hết thì qua nhanh, sai câu nào thì xem đúng mẹo của câu đó rồi luyện thêm 15 câu.</p>
+    <ul class="flow"><li>① Làm thử 5 câu</li><li>② Xem mẹo chỗ sai</li><li>③ Luyện 15 câu</li><li>④ Làm lại câu sai</li></ul>
+    <div class="overall"><span id="ovTxt">0/6 bài hoàn thành</span><div class="bar"><i id="ovBar" style="width:0"></i></div></div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+  <section class="sec" id="lesson"></section>
+  <div class="sec" style="padding:20px;text-align:center;margin-top:18px"><h2 style="font-family:var(--display);margin:0 0 6px">Thấy hữu ích? Học tiếp 5 bài còn lại</h2><p style="margin:0 0 12px;color:var(--muted)">Khóa đầy đủ có 6 bài ngữ pháp đề Sở, 17 đề thi thử có lời giải, chế độ thi kiểu Sở, sổ lỗi sai và lộ trình 12 tuần. <b>500.000đ</b>, dùng đến 31/07/2027.</p><div class="btns" style="justify-content:center"><a class="btn pri" href="gioi-thieu.html#hoc-phi">Xem học phí & đăng ký</a><a class="btn" href="https://zalo.me/0779693605" target="_blank" rel="noopener">Nhắn Zalo cô kèm điểm của em</a></div></div>
+  <div class="foot">© Ms. Ngọc Huyền – Tài liệu tự biên soạn, cấp riêng cho học viên khóa Bứt Phá TN THPT.</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const LESSONS=[{"id": "l1", "title": "Trật tự cụm danh từ", "short": "Cụm danh từ", "seen": "Xuất hiện trong cả 4 đề thi thử Sở 2026 tiêu biểu: Hà Nội, Bắc Ninh, Ninh Bình, Chuyên Hạ Long.", "spot": "Bốn phương án chứa <b>cùng các từ<\/b>, chỉ khác <b>thứ tự<\/b>: <i>unique cultural character / cultural character unique…<\/i>", "rules": [{"id": "a", "t": "Thứ tự tính từ: OSASCOMP", "b": "<b>O<\/b>pinion (ý kiến: <i>beautiful, delicious, rare<\/i>) → <b>S<\/b>ize (to nhỏ) → <b>A<\/b>ge (cũ mới) → <b>S<\/b>hape (hình dạng) → <b>C<\/b>olour (màu) → <b>O<\/b>rigin (nguồn gốc: <i>Vietnamese, local<\/i>) → <b>M<\/b>aterial (chất liệu: <i>silk, wooden<\/i>) → <b>P<\/b>urpose (mục đích) + <b>DANH TỪ<\/b>.<br>Mẹo nhớ: <b>“Ôm Sách Anh Siêng Cô Ơi Mau Phát”<\/b>.<br>VD: <i>a <u>beautiful<\/u> <u>small<\/u> <u>old<\/u> <u>silk<\/u> scarf<\/i>."}, {"id": "b", "t": "Danh từ bổ nghĩa đứng SÁT danh từ chính", "b": "Danh từ dùng như tính từ (chỉ loại, mục đích) luôn đứng <b>ngay trước<\/b> danh từ chính, sau mọi tính từ.<br>VD: <i>a popular <u>tourism<\/u> destination<\/i>, <i>delicious <u>street<\/u> food<\/i>, <i>a <u>swimming<\/u> pool<\/i>.<br>⚠ Không đảo: <s>tourism popular destination<\/s>."}, {"id": "c", "t": "Tính từ ghép có gạch nối", "b": "<i>two-hour, eco-friendly, long-term, low-income, English-speaking<\/i>… đứng sau tính từ ý kiến, trước danh từ bổ nghĩa.<br>Số + danh từ trong tính từ ghép <b>không thêm -s<\/b>: <i>a two-<u>hour<\/u> workshop<\/i> (<s>two-hours<\/s>)."}, {"id": "d", "t": "Từ hạn định, số, trạng từ đứng đầu", "b": "Thứ tự: <b>từ hạn định/lượng từ<\/b> (<i>the, many, all<\/i>) → <b>số thứ tự<\/b> (<i>first<\/i>) → <b>số đếm<\/b> (<i>three<\/i>) → tính từ → danh từ: <i>the first three books<\/i>.<br><b>Trạng từ<\/b> đứng ngay trước tính từ nó bổ nghĩa: <i>a <u>highly<\/u> effective method<\/i>."}], "trap": "Đừng dịch từng chữ theo tiếng Việt (“món ăn đường phố ngon” → <s>food street delicious<\/s>). Tiếng Anh: <b>tính từ trước, danh từ chính đứng CUỐI<\/b>.", "qs": [{"s": "The museum is famous for its ____ collection.", "o": ["rare Vietnamese ceramic", "Vietnamese rare ceramic", "ceramic rare Vietnamese", "rare ceramic Vietnamese"], "e": "Opinion (rare) → Origin (Vietnamese) → Material (ceramic) + collection.", "r": "a"}, {"s": "Join us for a ____ workshop this Saturday!", "o": ["free two-hour photography", "two-hour free photography", "photography free two-hour", "free photography two-hour"], "e": "Tính từ ý kiến (free) → tính từ ghép (two-hour) → danh từ chỉ loại (photography) sát danh từ chính.", "r": "c"}, {"s": "Da Lat is quickly becoming a ____.", "o": ["popular eco-tourism destination", "eco-tourism popular destination", "destination popular eco-tourism", "popular destination eco-tourism"], "e": "Tính từ (popular) → danh từ bổ nghĩa (eco-tourism) → danh từ chính (destination) đứng cuối.", "r": "b"}, {"s": "The school has introduced a ____ programme to reduce plastic waste.", "o": ["highly effective recycling", "effective highly recycling", "recycling highly effective", "highly recycling effective"], "e": "Trạng từ (highly) bổ nghĩa cho tính từ (effective) nên đứng ngay trước nó; danh từ chỉ loại (recycling) sát programme.", "r": "d"}, {"s": "Visitors can buy ____ at the gift shop.", "o": ["beautiful small silk scarves", "small beautiful silk scarves", "silk beautiful small scarves", "beautiful silk small scarves"], "e": "Opinion (beautiful) → Size (small) → Material (silk) + scarves.", "r": "a"}, {"s": "My grandmother gave me a ____ bag.", "o": ["pretty old brown leather", "old pretty brown leather", "brown pretty old leather", "pretty brown old leather"], "e": "Opinion (pretty) → Age (old) → Colour (brown) → Material (leather).", "r": "a"}, {"s": "The festival will feature dozens of ____ stalls.", "o": ["delicious local street food", "local delicious street food", "street food delicious local", "delicious street food local"], "e": "Opinion (delicious) → Origin (local) → cụm danh từ bổ nghĩa (street food) sát danh từ chính (stalls).", "r": "b"}, {"s": "Scientists warn that air pollution is a ____ issue in many cities.", "o": ["serious long-term health", "long-term serious health", "health serious long-term", "serious health long-term"], "e": "Opinion (serious) → tính từ ghép (long-term) → danh từ chỉ loại (health) + issue.", "r": "c"}, {"s": "Students may borrow ____ in the series for two weeks.", "o": ["the first three books", "the three first books", "three the first books", "first the three books"], "e": "Mạo từ → số thứ tự (first) → số đếm (three) → danh từ.", "r": "d"}, {"s": "They live in a ____ house near the river.", "o": ["lovely large old stone", "large lovely old stone", "old large lovely stone", "lovely old large stone"], "e": "Opinion (lovely) → Size (large) → Age (old) → Material (stone).", "r": "a"}, {"s": "He gave a ____ speech at the graduation ceremony.", "o": ["surprisingly moving", "moving surprisingly", "surprising moving", "surprisingly move"], "e": "Trạng từ (surprisingly) đứng trước tính từ (moving); tính từ đứng trước danh từ (speech).", "r": "d"}, {"s": "The new law aims to protect ____ species along the coast.", "o": ["many rare marine", "rare many marine", "marine many rare", "many marine rare"], "e": "Lượng từ (many) đứng đầu → Opinion (rare) → danh từ/tính từ chỉ loại (marine) sát danh từ.", "r": "d"}, {"s": "The sports centre has a ____ for teenagers.", "o": ["large outdoor swimming pool", "outdoor large swimming pool", "swimming large outdoor pool", "large swimming outdoor pool"], "e": "Size (large) → tính từ chỉ loại (outdoor) → danh từ ghép swimming pool (swimming không tách khỏi pool).", "r": "b"}, {"s": "Remember to bring a ____ bottle for the hike.", "o": ["reusable plastic water", "plastic reusable water", "water reusable plastic", "reusable water plastic"], "e": "Đặc điểm (reusable) → Material (plastic) → Purpose (water) + bottle.", "r": "a"}, {"s": "The café is well known for its ____ cakes.", "o": ["tasty homemade chocolate", "homemade tasty chocolate", "chocolate tasty homemade", "tasty chocolate homemade"], "e": "Opinion (tasty) → đặc điểm/nguồn gốc (homemade) → loại (chocolate) + cakes.", "r": "a"}, {"s": "The charity provides free lessons for ____ children.", "o": ["local low-income", "low-income local", "local income-low", "low local-income"], "e": "Tính từ chỉ loại có gạch nối (low-income) đứng sát danh từ hơn origin (local). Gạch nối không được đảo: low-income.", "r": "c"}, {"s": "The trip to Hội An was a ____ experience for our class.", "o": ["truly unforgettable cultural", "unforgettable truly cultural", "cultural truly unforgettable", "truly cultural unforgettable"], "e": "Trạng từ (truly) + tính từ ý kiến (unforgettable) → tính từ chỉ loại (cultural) sát danh từ.", "r": "d"}, {"s": "Our centre offers ____ courses for teenagers.", "o": ["fun weekend coding", "weekend fun coding", "coding fun weekend", "fun coding weekend"], "e": "Opinion (fun) trước; danh từ chỉ mục đích (coding) sát courses nhất.", "r": "b"}, {"s": "The company is hiring ____ volunteers for the summer camp.", "o": ["ten enthusiastic young", "enthusiastic ten young", "young ten enthusiastic", "ten young enthusiastic"], "e": "Số đếm (ten) đứng đầu → Opinion (enthusiastic) → Age (young).", "r": "d"}, {"s": "She was given a ____ table as a wedding present.", "o": ["beautiful round wooden", "round beautiful wooden", "wooden round beautiful", "beautiful wooden round"], "e": "Opinion (beautiful) → Shape (round) → Material (wooden).", "r": "a"}]}];
+const LOCKED=["Other / another", "Mệnh đề quan hệ", "Lượng từ", "Từ loại", "Từ nối"];
+const KEY="bp_nguphap", NDIAG=5;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[<>&"]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||"{}")||{}; }catch(e){ return {}; } }
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){} }
+let S=load(), cur=null, step="d";
+function L(id){ return LESSONS.find(x=>x.id===id); }
+function st(id){ S[id]=S[id]||{a:{d:{},p:{},w:{}},wrong:[]}; S[id].a=S[id].a||{d:{},p:{},w:{}}; S[id].a.w=S[id].a.w||{}; S[id].wrong=S[id].wrong||[]; return S[id]; }
+function seedOrder(lid,i){ let s=(lid.charCodeAt(1)*131+i*37+11)%233280; const r=()=>{ s=(s*9301+49297)%233280; return s/233280; }; const a=[0,1,2,3]; for(let k=3;k>0;k--){ const j=Math.floor(r()*(k+1)); [a[k],a[j]]=[a[j],a[k]]; } return a; }
+function stem(s){ return esc(s).replace("____",'<span class="blank">?</span>'); }
+function idxFor(mode){ return mode==="d"?[0,1,2,3,4]:mode==="p"?[...Array(15)].map((_,k)=>k+NDIAG):null; }
+function score(lid,mode){ const l=L(lid), a=st(lid).a[mode], ids=idxFor(mode); let r=0,n=0; ids.forEach(i=>{ if(a[i]!=null){ n++; if(a[i]===0) r++; } }); return {r,n,t:ids.length}; }
+function status(lid){
+  const s=st(lid), d=score(lid,"d"), p=score(lid,"p");
+  const passed=d.n===NDIAG&&d.r===NDIAG, practised=p.n===p.t;
+  const done=(passed||practised)&&s.wrong.length===0;
+  let txt="Chưa làm";
+  if(practised) txt=`Luyện ${p.r}/${p.t}`+(s.wrong.length?` · ${s.wrong.length} câu sai`:"");
+  else if(p.n) txt=`Đang luyện ${p.n}/${p.t}`;
+  else if(d.n===NDIAG) txt=passed?"Làm thử 5/5 ✓":`Làm thử ${d.r}/5`;
+  else if(d.n) txt=`Làm thử ${d.n}/5`;
+  return {done,txt};
+}
+function renderTiles(){
+  let done=0;
+  $("tiles").innerHTML=LESSONS.map((l,k)=>{ const s=status(l.id); if(s.done) done++;
+    return `<button class="tile ${cur===l.id?"on":""}" data-l="${l.id}" type="button"><span class="n">Bài ${k+1}</span><b>${l.short}</b><span class="stt">${s.txt}</span>${s.done?'<span class="ck">✅</span>':""}</button>`; }).join("")+LOCKED.map((t,k)=>`<a class="tile" href="gioi-thieu.html#hoc-phi" style="text-decoration:none;opacity:.8"><span class="n">Bài ${LESSONS.length+k+1}</span><b>${t}</b><span class="stt">🔒 Trong khóa đầy đủ</span></a>`).join("");
+  $("ovTxt").textContent=`${done}/6 bài hoàn thành`; $("ovBar").style.width=(done/6*100)+"%";
+}
+function qCard(lid,i,mode,num,total){
+  const l=L(lid), q=l.qs[i], a=st(lid).a[mode][i], ord=seedOrder(lid,i), rule=l.rules.find(r=>r.id===q.r);
+  const done=a!=null;
+  const opts=ord.map((k,j)=>{ let c=""; if(done){ if(k===0) c="right"; else if(k===a) c="wrong"; }
+    return `<button class="opt ${c}" type="button" data-i="${i}" data-k="${k}" data-m="${mode}" ${done?'tabindex="-1"':""}><span class="l">${"ABCD"[j]}</span><span>${esc(q.o[k])}</span></button>`; }).join("");
+  const vd=done?(a===0?'<div class="vd y">✔ Chính xác!</div>':`<div class="vd n">✘ Chưa đúng. Đáp án: ${esc(q.o[0])}</div>`):"";
+  return `<div class="q ${done?"done":""}" id="q-${mode}-${i}" data-i="${i}" data-m="${mode}"><div class="qn"><span>Câu ${num}/${total}</span>${mode==="w"?`<span>${i<NDIAG?"từ phần làm thử":"từ phần luyện"}</span>`:""}</div>
+   <div class="st">${stem(q.s)}</div><div class="opts">${opts}</div>
+   <div class="ex">${vd}<div>${esc(q.e)}</div><div class="row"><button class="rchip" type="button" data-rule="${q.r}">📌 ${esc(rule.t)}</button><button class="next" type="button" data-next="${mode}">Câu tiếp ↓</button></div></div></div>`;
+}
+function stepsBar(lid){
+  const d=score(lid,"d"), p=score(lid,"p"), w=st(lid).wrong.length;
+  const items=[["d","1","Làm thử",d.n===d.t],["t","2","Mẹo ghi nhớ",false],["p","3",`Luyện 15 câu`,p.n===p.t],["w","4","Câu sai",false]];
+  return `<nav class="steps" id="steps">${items.map(([k,c,t,ok])=>`<button type="button" class="step ${step===k?"on":""} ${ok?"ok":""}" data-step="${k}"><span class="c">${ok?"✓":c}</span>${t}${k==="w"&&w?` <span class="badge">${w}</span>`:""}</button>`).join("")}</nav>`;
+}
+function renderLesson(lid,stp,scroll){
+  cur=lid; if(stp) step=stp; const l=L(lid), k=LESSONS.indexOf(l)+1;
+  $("lesson").innerHTML=`<div class="lh"><div class="num">${k}</div><div><h2>${l.title}</h2><div class="sub">${l.seen}</div></div></div>${stepsBar(lid)}<div class="pane" id="pane"></div>`;
+  renderPane(); renderTiles();
+  try{ history.replaceState(null,"","#"+lid+"-"+step); }catch(e){}
+  if(scroll) $("lesson").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function missedRules(lid){ const l=L(lid), a=st(lid).a; const m=new Set(); Object.entries(a.d).concat(Object.entries(a.p)).forEach(([i,v])=>{ if(v!==0) m.add(l.qs[i].r); }); st(lid).wrong.forEach(i=>m.add(l.qs[i].r)); return m; }
+function renderPane(){
+  const lid=cur, l=L(lid), s=st(lid), P=$("pane");
+  if(step==="d"||step==="p"){
+    const ids=idxFor(step), sc=score(lid,step);
+    const intro=step==="d"?`<div class="intro"><span class="i">🧪</span><div><b>Làm thử 5 câu, chưa cần học trước.</b> Chọn đáp án là biết đúng sai ngay. Đúng cả 5 câu thì em có thể bỏ qua bài này.<span class="kbd"> Mẹo: bấm phím A–D để chọn nhanh.</span></div></div>`
+      :`<div class="intro"><span class="i">🎯</span><div><b>15 câu luyện.</b> Câu nào sai sẽ được lưu vào mục <b>Câu sai</b> để em làm lại.</div></div>`;
+    P.innerHTML=intro+`<div class="prog"><span>Đã làm ${sc.n}/${sc.t} · đúng ${sc.r}</span><div class="bar"><i style="width:${sc.n/sc.t*100}%"></i></div></div>`
+      +ids.map((i,j)=>qCard(lid,i,step,j+1,ids.length)).join("")+`<div id="resBox">${sc.n===sc.t?resultHTML(lid,step):""}</div>`;
+    markCur(); return;
+  }
+  if(step==="t"){
+    const miss=missedRules(lid);
+    P.innerHTML=`<div class="box spot"><b class="t">Nhận diện trong đề</b>${l.spot}</div>`
+      +(miss.size?`<div class="intro"><span class="i">👀</span><div>Mục <b>tô đỏ</b> là chỗ em vừa làm sai, đã được mở sẵn. Đọc kỹ phần đó trước nhé.</div></div>`:"")
+      +[...l.rules].sort((x,y)=>(miss.has(y.id)?1:0)-(miss.has(x.id)?1:0)).map(r=>`<details class="rule ${miss.has(r.id)?"miss":""}" id="rule-${r.id}" ${miss.has(r.id)||!miss.size?"open":""}><summary><span class="k">${r.id.toUpperCase()}</span><span>${r.t}</span>${miss.has(r.id)?'<span class="flag">Em vừa sai</span>':""}<span class="ar">›</span></summary><div class="bd">${r.b}</div></details>`).join("")
+      +`<div class="box trap"><b class="t">Bẫy hay gặp</b>${l.trap}</div>`
+      +`<div class="btns"><button class="btn pri" type="button" data-go="p">Luyện 15 câu →</button>${score(lid,"d").n<NDIAG?'<button class="btn" type="button" data-go="d">Quay lại làm thử</button>':""}</div>`;
+    return;
+  }
+  if(step==="w"){
+    const w=s.wrong;
+    if(!w.length){ P.innerHTML=`<div class="empty"><b>${(score(lid,"d").n||score(lid,"p").n)?"🎉 Không còn câu sai nào!":"Chưa có câu sai"}</b>Câu nào em làm sai ở phần làm thử hoặc luyện sẽ hiện ở đây để làm lại. Làm lại đúng thì câu tự rời danh sách.</div><div class="btns" style="justify-content:center">${nextLessonBtn(lid)}</div>`; return; }
+    s.a.w={}; save();
+    P.innerHTML=`<div class="intro"><span class="i">🔁</span><div><b>${w.length} câu cần làm lại.</b> Thứ tự đáp án giữ nguyên, em hãy nhớ lại mẹo trước khi chọn. Đúng thì câu rời danh sách.</div></div>`
+      +w.map((i,j)=>qCard(lid,i,"w",j+1,w.length)).join("")+`<div id="resBox"></div>`;
+    markCur();
+  }
+}
+function nextLessonBtn(lid){ if(LOCKED.length) return `<a class="btn pri" href="gioi-thieu.html#hoc-phi">Mở khóa ${LOCKED.length} bài còn lại →</a>`; const k=LESSONS.findIndex(x=>x.id===lid); const nx=LESSONS[(k+1)%LESSONS.length]; return `<button class="btn pri" type="button" data-l="${nx.id}">Bài tiếp: ${nx.short} →</button>`; }
+function resultHTML(lid,mode){
+  const sc=score(lid,mode), l=L(lid);
+  if(mode==="d"){
+    if(sc.r===sc.t) return `<div class="res"><div class="big">5/5 🎉</div><p><b>Em nắm chắc bài này rồi!</b> Có thể sang bài tiếp, hoặc luyện thêm 15 câu cho thật chắc.</p><div class="btns">${nextLessonBtn(lid)}<button class="btn" type="button" data-go="p">Luyện thêm 15 câu</button></div></div>`;
+    const miss=[...missedRules(lid)].map(r=>l.rules.find(x=>x.id===r));
+    return `<div class="res"><div class="big">${sc.r}/5</div><p>Em cần xem lại ${miss.length>1?"các mẹo":"mẹo"}:</p><div class="chips">${miss.map(r=>`<button class="rchip" type="button" data-rule="${r.id}">📌 ${esc(r.t)}</button>`).join("")}</div><div class="btns"><button class="btn pri" type="button" data-go="t">Xem mẹo chỗ em sai →</button></div></div>`;
+  }
+  const pct=Math.round(sc.r/sc.t*100), w=st(lid).wrong.length;
+  const msg=pct>=90?"Xuất sắc! Em đã thành thạo điểm ngữ pháp này.":pct>=70?"Khá tốt! Làm lại các câu sai để chắc chắn hơn.":"Em nên đọc lại phần Mẹo rồi làm lại các câu sai nhé.";
+  return `<div class="res"><div class="big">${sc.r}/${sc.t}</div><p><b>${msg}</b></p><div class="btns">${w?`<button class="btn pri" type="button" data-go="w">Làm lại ${w} câu sai</button>`:nextLessonBtn(lid)}<button class="btn" type="button" data-redo="1">Làm lại cả 15 câu</button>${pct<70?'<button class="btn" type="button" data-go="t">Xem lại mẹo</button>':""}</div></div>`;
+}
+function markCur(){
+  document.querySelectorAll(".q.cur").forEach(x=>x.classList.remove("cur"));
+  const f=document.querySelector("#pane .q:not(.done)"); if(f) f.classList.add("cur");
+}
+function toast(t){ const el=$("toast"); el.textContent=t; el.classList.add("on"); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.remove("on"),1800); }
+function answer(btn){
+  const i=+btn.dataset.i, k=+btn.dataset.k, mode=btn.dataset.m, lid=cur, s=st(lid);
+  if(s.a[mode][i]!=null) return;
+  s.a[mode][i]=k; const ok=k===0;
+  if(mode==="w"){ if(ok) s.wrong=s.wrong.filter(x=>x!==i); }
+  else if(!ok && !s.wrong.includes(i)) s.wrong.push(i);
+  save();
+  const card=$("q-"+mode+"-"+i); const n=card.querySelector(".qn").outerHTML; const tmp=document.createElement("div");
+  const total=mode==="w"?card.parentNode.querySelectorAll(".q").length:idxFor(mode).length;
+  const num=+card.querySelector(".qn span").textContent.match(/\d+/)[0];
+  tmp.innerHTML=qCard(lid,i,mode,num,total); card.replaceWith(tmp.firstElementChild);
+  if(mode!=="w"){ const sc=score(lid,mode); const pr=document.querySelector("#pane .prog"); if(pr) pr.innerHTML=`<span>Đã làm ${sc.n}/${sc.t} · đúng ${sc.r}</span><div class="bar"><i style="width:${sc.n/sc.t*100}%"></i></div>`;
+    if(sc.n===sc.t){ $("resBox").innerHTML=resultHTML(lid,mode); setTimeout(()=>$("resBox").scrollIntoView({behavior:"smooth",block:"center"}),350); } }
+  else { const left=[...document.querySelectorAll("#pane .q")].every(q=>q.classList.contains("done")); if(left){ const w=s.wrong.length; $("resBox").innerHTML=`<div class="res"><div class="big">${w?w+" câu":"Xong! 🎉"}</div><p><b>${w?"vẫn còn trong danh sách câu sai. Xem lại mẹo rồi thử lần nữa nhé.":"Em đã sửa hết các câu sai của bài này."}</b></p><div class="btns">${w?'<button class="btn pri" type="button" data-go="w">Làm lại lần nữa</button><button class="btn" type="button" data-go="t">Xem mẹo</button>':nextLessonBtn(lid)}</div></div>`; setTimeout(()=>$("resBox").scrollIntoView({behavior:"smooth",block:"center"}),350); } }
+  const nb=$("steps"); if(nb) nb.outerHTML=stepsBar(lid);
+  markCur(); renderTiles();
+  if(!ok && mode!=="w") toast("Đã lưu vào mục Câu sai");
+}
+function goNext(mode){ const f=document.querySelector("#pane .q:not(.done)"); if(f){ f.scrollIntoView({behavior:"smooth",block:"center"}); } else { const r=$("resBox"); if(r) r.scrollIntoView({behavior:"smooth",block:"center"}); } }
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-l],[data-step],[data-go],[data-rule],[data-next],[data-redo],.opt"); if(!t) return;
+  if(t.matches(".opt")){ if(!t.closest(".q").classList.contains("done")) answer(t); return; }
+  if(t.dataset.l){ step=bestStep(t.dataset.l); renderLesson(t.dataset.l,step,true); return; }
+  if(t.dataset.step){ renderLesson(cur,t.dataset.step,false); $("lesson").scrollIntoView({behavior:"smooth"}); return; }
+  if(t.dataset.go){ renderLesson(cur,t.dataset.go,false); $("lesson").scrollIntoView({behavior:"smooth"}); return; }
+  if(t.dataset.rule){ renderLesson(cur,"t",false); const r=$("rule-"+t.dataset.rule); if(r){ r.open=true; setTimeout(()=>r.scrollIntoView({behavior:"smooth",block:"center"}),60); } return; }
+  if(t.dataset.next){ goNext(t.dataset.next); return; }
+  if(t.dataset.redo){ const s=st(cur); s.a.p={}; save(); renderLesson(cur,"p",false); $("lesson").scrollIntoView({behavior:"smooth"}); return; }
+});
+document.addEventListener("keydown",e=>{
+  if(e.ctrlKey||e.metaKey||e.altKey||/INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  const m={a:0,b:1,c:2,d:3,"1":0,"2":1,"3":2,"4":3}[e.key.toLowerCase()]; if(m==null) return;
+  const q=document.querySelector("#pane .q.cur"); if(!q) return; const b=q.querySelectorAll(".opt")[m]; if(b){ e.preventDefault(); answer(b); setTimeout(()=>goNext(),500); }
+});
+function bestStep(lid){ const d=score(lid,"d"), p=score(lid,"p"), w=st(lid).wrong.length;
+  if(d.n<d.t) return "d"; if(p.n>0&&p.n<p.t) return "p"; if(d.r<d.t&&p.n===0) return "t"; if(p.n===p.t&&w) return "w"; if(d.r===d.t&&p.n===0) return "d"; return "p"; }
+function setTbh(){ const h=document.querySelector('.topbar').offsetHeight; document.documentElement.style.setProperty('--tbh',(h-1)+'px'); document.documentElement.style.scrollPaddingTop=(h+56)+'px'; }
+window.addEventListener('resize',setTbh);
+(function init(){
+  setTbh();
+  const h=(location.hash||"").slice(1).split("-"); let lid=L(h[0])?h[0]:null;
+  if(!lid){ lid=(LESSONS.find(l=>!status(l.id).done)||LESSONS[0]).id; }
+  const sp=["d","t","p","w"].includes(h[1])?h[1]:bestStep(lid);
+  renderLesson(lid,sp,false);
+})();
+</script>
+</body></html>
