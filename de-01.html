@@ -99,12 +99,19 @@ footer{position:relative;z-index:1;text-align:center;font-size:12.5px;color:var(
 nav.tabs{margin-top:8px}nav.tabs button{padding:8px 10px;font-size:12px}main{padding:12px 10px 40px}.left{padding:12px 14px}
 .passage{font-size:15.5px;line-height:1.7}.passage p{text-align:left}#jump{display:flex}.q{padding:12px}.wm{font-size:40px}.instr{font-size:14px}}
 @media print{header,nav,.ltools,.note,footer .noprint{display:none!important}.left{position:static;max-height:none}.part{display:block!important;page-break-after:always}.exp{display:block!important}.wm{display:none}}
+
+.ordp{display:inline-flex;align-items:center;gap:6px}
+.ordp select{font:600 12.5px 'Be Vietnam Pro',system-ui,sans-serif;color:#fff;background:transparent;border:0;outline:0;cursor:pointer;max-width:190px}
+.ordp select option{color:#36141F;background:#fff}
+.ordp select:disabled{opacity:.6;cursor:not-allowed}
+.ordbar{display:none;position:relative;z-index:2;background:#FFEEF4;color:#8E1446;text-align:center;font-size:13.5px;padding:7px 12px;border-bottom:1px solid #F1CEDB}
+body.sorder .ordbar{display:block}
 </style></head><body><div style="background:#C41F63;color:#fff;text-align:center;padding:8px 12px;font:600 14px/1.4 'Be Vietnam Pro',system-ui,sans-serif">🎁 Đây là đề làm thử MIỄN PHÍ. Khóa Bứt Phá có thêm 14 đề B2+/C1, sổ lỗi sai, luyện dạng, thẻ từ vựng… <a href="gioi-thieu.html" style="color:#fff;text-decoration:underline">Xem khóa học →</a></div>
 <div class="wm">© Ms. Ngọc Huyền</div>
 <header><div class="hrow"><div><div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">← Lộ trình</a> · Bứt Phá Tiếng Anh TN THPT · Ms. Ngọc Huyền</div><h1>ĐỀ THI THỬ TỐT NGHIỆP THPT – SỐ 01</h1><div class="sub">Môn: Tiếng Anh · Thời gian: 50 phút · 40 câu · Mức độ: B1+ · Cấu trúc 2026 · Mã đề 601</div></div>
-<div class="stats"><span class="pill">⏱ <b id="s_time">50:00</b></span><span class="pill">Đã làm <b id="s_done">0</b>/40</span><span class="pill">Đúng <b id="s_right">0</b></span><span class="pill">Điểm <b id="s_score">0,00</b></span>
+<div class="stats"><label class="pill ordp" title="Thứ tự các phần trong đề">🔀 <select id="ordSel" aria-label="Thứ tự các phần"><option value="khoa">Thứ tự của khóa</option><option value="bo">Kiểu Sở: đa số Sở / đề minh họa</option><option value="halong">Kiểu Sở: Chuyên Hạ Long</option><option value="ngaunhien">Kiểu Sở: xáo ngẫu nhiên</option></select></label><span class="pill">⏱ <b id="s_time">50:00</b></span><span class="pill">Đã làm <b id="s_done">0</b>/40</span><span class="pill">Đúng <b id="s_right">0</b></span><span class="pill">Điểm <b id="s_score">0,00</b></span>
 <button class="btn solid" id="tbtn" onclick="timer()">▶ Bắt đầu tính giờ</button><button class="btn" id="exbtn" onclick="startExam()">📝 Thi thật</button><button class="btn solid" id="subbtn" onclick="submitExam()" style="display:none">Nộp bài</button><button class="btn" id="reveal" onclick="revealAll()">Hiện tất cả đáp án</button><button class="btn" onclick="reset()">Làm lại</button><button class="btn" onclick="window.print()">In</button></div></div>
-<nav class="tabs"></nav></header>
+<nav class="tabs"></nav></header><div class="ordbar" id="ordbar"></div>
 <div class="exbar">📝 <b>Đang thi thật</b> · Đáp án và lời giải chỉ hiện sau khi bấm <b>Nộp bài</b> · Tab chuyển đỏ khi phần đó vượt thời gian gợi ý</div>
 <main></main>
 <footer>© 2027 Ms. Ngọc Huyền (Phạm Thị Ngọc Huyền). Toàn bộ văn bản, câu hỏi và lời giải do tác giả biên soạn. Tài liệu cấp riêng cho học viên – nghiêm cấm sao chép, chia sẻ, bán lại.</footer>
@@ -242,7 +249,26 @@ function submitExam(force){const b=$('#subbtn');const left=Object.keys(KEY).filt
   ls('rep',JSON.stringify({pt:st.pt,qt:st.qt,el:st.el,t:Date.now(),exam:1}));try{localStorage.removeItem(LS+'ex')}catch(e){}
   document.body.classList.remove('exam');stats();show('key');toast('✔ Đã nộp bài. Xem điểm và báo cáo thời gian ở tab Kết quả.')}
 try{const ex=JSON.parse(ls('ex')||'null');if(ex&&ex.mode==='exam'){st.mode='exam';st.pick=ex.pick||{};st.pt=ex.pt||{};st.qt=ex.qt||{};st.el=ex.el||0;st.left=ex.left||3000;st.lastA=ex.lastA||0;document.body.classList.add('exam')}}catch(e){}
+
+/* ===== Thứ tự các phần – chế độ "Thi kiểu Sở" ===== */
+(function(){
+  const ORD={khoa:['p1','p2','p3','p4','p5','p6'],bo:['p4','p5','p1','p6','p2','p3'],halong:['p2','p4','p1','p3','p5','p6']};
+  const NAME={khoa:'Thứ tự của khóa',bo:'Đa số Sở / đề minh họa (Bắc Ninh, Ninh Bình…)',halong:'Kiểu Chuyên Hạ Long',ngaunhien:'Xáo ngẫu nhiên'};
+  let m='khoa'; try{m=localStorage.getItem('bp_order')||'khoa'}catch(e){} if(!NAME[m]) m='khoa';
+  let ids=ORD[m];
+  if(m==='ngaunhien'){ try{ids=JSON.parse(ls('rnd')||'null')}catch(e){ids=null}
+    if(!Array.isArray(ids)||ids.length!==6){ ids=['p1','p2','p3','p4','p5','p6']; for(let k=5;k>0;k--){const j=Math.floor(Math.random()*(k+1));[ids[k],ids[j]]=[ids[j],ids[k]]} ls('rnd',JSON.stringify(ids)); } }
+  if(m!=='khoa'&&ids.every(id=>D.some(p=>p.id===id))){ const by={}; D.forEach(p=>by[p.id]=p); D.splice(0,D.length,...ids.map(id=>by[id])); }
+  window.__ordMode=m;
+  const sel=document.getElementById('ordSel');
+  if(sel){ sel.value=m;
+    sel.onchange=()=>{ try{localStorage.setItem('bp_order',sel.value)}catch(e){} if(sel.value==='ngaunhien'){try{localStorage.removeItem(LS+'rnd')}catch(e){}} ls('tab',''); location.reload(); }; }
+  if(m!=='khoa'){ document.body.classList.add('sorder');
+    const b=document.getElementById('ordbar'); if(b) b.innerHTML='🔀 <b>Thi kiểu Sở</b> · '+NAME[m]+': làm lần lượt '+D.map(p=>p.name.replace(/ \/.*/,'')).join(' → ')+'. Số câu giữ như đề gốc để Sổ lỗi sai vẫn khớp.'; }
+})();
 build();
+if(st.mode==='exam'){const s=document.getElementById('ordSel');if(s){s.disabled=true;s.parentNode.title='Đang thi thật – nộp bài xong mới đổi được thứ tự'}}
+
 if(st.mode==='exam'){Object.entries(st.pick).forEach(([n,l])=>$$(`.opt[data-q="${n}"]`).forEach(b=>b.classList.toggle('sel',b.dataset.l===l)));$('#subbtn').style.display='';$('#reveal').style.display='none';const m=Math.floor(st.left/60),s2=st.left%60;$('#s_time').textContent=`${String(m).padStart(2,'0')}:${String(s2).padStart(2,'0')}`;
   if(ls('autostart')){ls('autostart','');timer()}else{$('#tbtn').textContent='▶ Tiếp tục thi'}}
 show(ls('tab')||D[0].id);stats();
