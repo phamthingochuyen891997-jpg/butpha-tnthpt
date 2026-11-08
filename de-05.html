@@ -58,6 +58,7 @@ function errMsg(e){ const c=e&&e.code||"";
   if(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request") return "Em đã đóng cửa sổ đăng nhập. Bấm lại nhé.";
   if(c==="bp/load"||c==="auth/network-request-failed"||/fetch|network|Failed to load|import/i.test(String(e&&e.message||e))) return "Mạng đang chập chờn hoặc chặn máy chủ Google. Em tải lại trang; nếu vẫn lỗi thì tắt trình chặn quảng cáo, đổi sang 4G hoặc thử trình duyệt khác.";
   if(c==="auth/web-storage-unsupported"||c==="auth/operation-not-supported-in-this-environment"||INAPP) return "Trình duyệt này không cho đăng nhập Google. Em mở link bằng Chrome hoặc Safari theo hướng dẫn ở trên nhé.";
+  if(c==="auth/popup-blocked") return IOS?"Điện thoại đang chặn cửa sổ đăng nhập Google. Em bấm nút đăng nhập thêm 1 lần nữa. Nếu vẫn bị: Safari → vào Cài đặt → Safari → tắt “Chặn cửa sổ bật lên”; Chrome → ⋯ → Cài đặt → Cài đặt nội dung → Chặn cửa sổ bật lên → Tắt.":"Trình duyệt đang chặn cửa sổ đăng nhập Google. Em bấm nút đăng nhập thêm 1 lần nữa, hoặc cho phép cửa sổ bật lên (pop-up) cho trang này.";
   if(c==="auth/too-many-requests") return "Em thử quá nhiều lần. Đợi vài phút rồi thử lại nhé.";
   return "Chưa đăng nhập được (mã lỗi: "+esc(c||"không rõ")+"). Em tải lại trang thử lại, hoặc chụp màn hình gửi cô qua Zalo.";
 }
@@ -73,7 +74,7 @@ function deniedView(email,reason){
   <p>${reason}</p><p>Nhắn Zalo cho cô (<b>${ZALO}</b>) kèm Gmail ở trên để được kích hoạt. Nếu em đăng ký bằng Gmail khác, bấm nút dưới để đổi tài khoản.</p>
   <button class="gbtn" id="sw">${G_ICON}<span>Đăng nhập bằng Gmail khác</span></button>
   <div class="alt"><a href="gioi-thieu.html">Xem khóa học</a><a href="de-01.html">Làm thử Đề 01</a></div>`;
-  document.getElementById("sw").onclick=async()=>{ await fb.signOut(fb.auth); signIn(true); };
+  document.getElementById("sw").onclick=()=>{ try{ fb.signOut(fb.auth); }catch(e){} signIn(true); };
 }
 let fb=null;
 async function loadFb(){
@@ -83,14 +84,12 @@ async function loadFb(){
   const app=A.initializeApp(CFG); const auth=U.getAuth(app); auth.languageCode="vi";
   fb={auth,db:F.getFirestore(app),U,F,signOut:U.signOut}; return fb;
 }
-async function signIn(pick){
+function signIn(pick){
+  // Mở cửa sổ Google ngay trong lần bấm (không chờ) để điện thoại không chặn; không dùng chuyển trang vì iPhone chặn.
   const err=document.getElementById("err"); const b=document.getElementById("gg")||document.getElementById("sw"); if(b) b.disabled=true;
-  try{ const {auth,U}=await loadFb(); const p=new U.GoogleAuthProvider(); p.setCustomParameters({prompt:"select_account"});
-    try{ await U.signInWithPopup(auth,p); }
-    catch(e){ if(e&&(e.code==="auth/popup-blocked"||e.code==="auth/operation-not-supported-in-this-environment")){ await U.signInWithRedirect(auth,p); return; } throw e; }
-    await check();
-  }catch(e){ if(b) b.disabled=false; const m=errMsg(e);
-    if(err) err.textContent=m; else loginView(m); }
+  const go=f=>{ const p=new f.U.GoogleAuthProvider(); p.setCustomParameters({prompt:"select_account"}); return f.U.signInWithPopup(f.auth,p); };
+  (fb?go(fb):loadFb().then(go)).then(()=>check()).catch(e=>{ if(b) b.disabled=false; const m=errMsg(e);
+    if(err) err.textContent=m; else loginView(m); });
 }
 async function check(){
   const {auth,db,F}=await loadFb(); const u=auth.currentUser; if(!u){ loginView(); return; }
