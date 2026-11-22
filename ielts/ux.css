@@ -1,0 +1,116 @@
+/* ===== UX layer: mascot, motion, mobile navigation ===== */
+:root{--muted:#4E4C3C}
+@media (prefers-color-scheme: dark){:root{--muted:#C4C0A8}}
+
+/* ---------- mascot ---------- */
+.mascot{display:inline-block;flex:0 0 auto;transform-origin:50% 90%}
+.mascot.bob{animation:mBob 3.2s ease-in-out infinite}
+.mascot.cheer{animation:mJump .7s cubic-bezier(.3,1.6,.5,1) 2}
+@keyframes mBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+@keyframes mJump{0%{transform:translateY(0) scale(1)}40%{transform:translateY(-12px) scale(1.06,.95)}100%{transform:translateY(0) scale(1)}}
+.mascot .blink{animation:mBlink 4.5s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes mBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.mbub{display:flex;align-items:flex-end;gap:10px;margin:0 0 14px}
+.mbub .bubble{position:relative;background:var(--card);border:2px solid var(--yel,#F5E964);border-radius:16px 16px 16px 4px;padding:10px 14px;font-weight:600;line-height:1.45;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.mbub .bubble b{color:var(--accent)}
+.mbub.on-dark .bubble{background:#FFFBEA;color:#1A1B16}
+
+/* ---------- continue / onboarding card ---------- */
+.ux-cont{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#FFF8C9,#F5E964);color:#1A1B16;border:none;border-radius:18px;padding:16px 18px;margin-bottom:16px;box-shadow:0 8px 24px rgba(46,59,31,.15)}
+.ux-cont h3{margin:0 0 4px;font-size:18px;color:#1A1B16}
+.ux-cont p{margin:0 0 10px;color:#3A3A2A}
+.ux-cont .btn{background:#2E3B1F;border-color:#2E3B1F;color:#fff}
+.ux-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.ux-steps div{background:rgba(255,255,255,.65);border-radius:12px;padding:8px 10px;font-size:13px;line-height:1.35}
+.ux-steps b{display:block;font-size:20px;color:#2E3B1F}
+.ux-x{margin-left:auto;align-self:flex-start;background:none;border:none;font-size:20px;cursor:pointer;color:#555}
+
+/* ---------- motion ---------- */
+.ux-enter > *{animation:uxUp .45s cubic-bezier(.2,.8,.2,1) both}
+.ux-enter > *:nth-child(2){animation-delay:.05s}.ux-enter > *:nth-child(3){animation-delay:.1s}.ux-enter > *:nth-child(4){animation-delay:.15s}.ux-enter > *:nth-child(n+5){animation-delay:.2s}
+section.active{animation:uxUp .35s cubic-bezier(.2,.8,.2,1) both}
+@keyframes uxUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.btn,button{transition:transform .12s ease,box-shadow .2s ease,background-color .2s}
+.btn:active,button:active{transform:scale(.96)}
+#pbar,.progress span{transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.opts label.ok,.opts label.bad,input.ok,input.bad,select.ok,select.bad{animation:uxPop .35s ease}
+@keyframes uxPop{0%{transform:scale(1)}40%{transform:scale(1.03)}100%{transform:scale(1)}}
+.ux-confetti{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.ux-confetti i{position:absolute;top:-12px;width:9px;height:14px;border-radius:2px;animation:uxFall 1.6s cubic-bezier(.3,.6,.5,1) forwards}
+@keyframes uxFall{to{transform:translate3d(var(--dx),105vh,0) rotate(var(--r));opacity:.9}}
+
+/* ---------- mascot toast ---------- */
+#uxToast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;z-index:55;display:flex;align-items:center;gap:10px;background:#1E2A14;color:#fff;padding:10px 16px 10px 10px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:min(92vw,520px);font-weight:600;transition:all .35s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+#uxToast.show{opacity:1;transform:translate(-50%,0)}
+#uxLoad{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:56;background:#1E2A14;color:#F5E964;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;display:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+#uxLoad.show{display:block;animation:uxUp .3s both}
+
+/* ---------- long headings ---------- */
+h2.long{font-family:"Noto Sans",sans-serif!important;font-weight:800!important;text-transform:none!important;letter-spacing:0!important;font-size:21px!important;line-height:1.3!important}
+#hTitle.long{font-family:"Noto Sans",sans-serif!important;font-weight:800!important;text-transform:none!important;letter-spacing:0!important}
+
+/* ---------- writing helpers ---------- */
+.ux-saved{font-size:13px;color:var(--ok,#2D6A2D);margin-left:8px;opacity:0;transition:opacity .3s}
+.ux-saved.on{opacity:1}
+.ux-photo{margin-top:10px;border:1px dashed var(--line);border-radius:12px;padding:10px 12px}
+.ux-photo summary{cursor:pointer;font-weight:700}
+
+/* ---------- bottom bar + sheet (mobile) ---------- */
+.ux-bbar,.ux-step{display:none}
+.ux-sheet{position:fixed;inset:0;z-index:70;display:none}
+.ux-sheet.open{display:block}
+.ux-sheet .bg{position:absolute;inset:0;background:rgba(10,15,8,.45);animation:uxFade .2s both}
+.ux-sheet .panel{position:absolute;left:0;right:0;bottom:0;max-height:78vh;overflow:auto;background:var(--card);border-radius:22px 22px 0 0;padding:14px 16px 26px;animation:uxSlide .3s cubic-bezier(.2,.8,.2,1) both}
+.ux-sheet .grab{width:44px;height:5px;border-radius:5px;background:var(--line);margin:0 auto 12px}
+.ux-sheet a.item,.ux-sheet button.item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px 10px;border-radius:12px;border:none;background:none;color:var(--ink);font:inherit;font-weight:600;text-decoration:none}
+.ux-sheet .item.on{background:var(--accent-soft)}
+.ux-sheet .item .tick{margin-left:auto;color:var(--ok,#2D6A2D)}
+.ux-sheet select{width:100%;margin-top:8px}
+@keyframes uxFade{from{opacity:0}}
+@keyframes uxSlide{from{transform:translateY(100%)}}
+
+@media (max-width:700px){
+ html{scroll-padding-bottom:96px;scroll-padding-top:60px} body{padding-bottom:76px}
+ header .topnav{display:none!important}
+ header .brand{margin-bottom:2px}
+ header .badge{font-size:11px;padding:3px 9px}
+ #hTitle{font-size:22px!important;line-height:1.15!important;margin:6px 0 2px!important}
+ #hSub{font-size:13px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0!important;cursor:pointer}
+ #hSub.full{white-space:normal}
+ #hProg .plabel{font-size:12px}
+ header{padding:8px 12px 10px!important}
+ body.unitv #tabnav{display:none!important}
+ .ux-bbar{display:flex;position:fixed;top:auto;left:0;right:0;bottom:0;z-index:50;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+ .ux-bbar a,.ux-bbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:700;color:var(--muted);text-decoration:none;background:none;border:none;padding:4px 0;position:relative;font-family:inherit}
+ .ux-bbar .ic{font-size:21px;line-height:1;transition:transform .2s}
+ .ux-bbar .on{color:var(--accent)}
+ .ux-bbar .on .ic{transform:translateY(-2px) scale(1.12)}
+ .ux-bbar .on::before{content:"";position:absolute;top:-6px;width:28px;height:3px;border-radius:3px;background:var(--yel,#F5E964)}
+ .ux-bbar .dot{position:absolute;top:0;right:calc(50% - 22px);background:#E4572E;color:#fff;border-radius:999px;font-size:10px;padding:0 5px;line-height:16px}
+ body.unitv .ux-step{display:flex;position:sticky;top:0;z-index:6;align-items:center;gap:8px;background:var(--card);border-bottom:1px solid var(--line);padding:8px 12px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+ .ux-step button{flex:1;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:8px 12px;font:inherit;font-weight:700;color:var(--ink);text-align:left}
+ .ux-step .k{background:var(--yel,#F5E964);color:#1A1B16;border-radius:8px;padding:1px 8px;font-size:13px}
+ .ux-step .bar{flex:0 0 64px;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+ .ux-step .bar span{display:block;height:100%;background:var(--ok,#2D6A2D);transition:width .5s}
+ body.unitv .pager{position:sticky;bottom:72px;z-index:7;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);flex-wrap:nowrap}
+ body.unitv .pager .btn{padding:9px 10px;font-size:14px;white-space:nowrap}
+ .cbt-bar{top:56px!important}
+ #uxToast{bottom:86px} body.unitv #uxToast{bottom:156px}
+ #view label{max-width:100%} #view label select{max-width:calc(100vw - 72px)}
+ #toast{bottom:86px!important}
+ #view select{max-width:100%}
+ .ux-rtabs{display:flex;position:sticky;top:56px;z-index:5;gap:6px;background:var(--card);padding:6px 0;margin-bottom:6px}
+ .ux-rtabs button{flex:1;border:2px solid var(--line);background:var(--bg);border-radius:12px;padding:9px 6px;font:inherit;font-weight:800;color:var(--ink)}
+ .ux-rtabs button.on{border-color:#2E3B1F;background:#2E3B1F;color:#fff}
+ .cbt.mob{display:block!important}
+ .cbt.mob .pane{display:none!important;max-height:none!important;overflow:visible!important}
+ .cbt.mob.sp .pane.passage{display:block!important}
+ .cbt.mob.sq .pane:not(.passage){display:block!important}
+ .ux-steps{grid-template-columns:1fr}
+ .ux-cont{flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+ .ux-enter > *,section.active,.mascot.bob,.mascot.cheer,.mascot .blink,.opts label.ok,.opts label.bad{animation:none!important}
+ .ux-confetti{display:none}
+}
+@media (min-width:701px){#tabs{flex-wrap:wrap;row-gap:2px}}
